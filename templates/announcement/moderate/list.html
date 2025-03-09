@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ol>
+        {% for a in announcements %}
+            <p> id = {{ a.id }} , title = {{ a.title }} , status = {{ a.status }} <a
+                    href="{% url 'announcements:moderate-update' a.id %}" class="btn btn-info"> moderate </a></p>
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{% for a in announcements %}
-		<h1>{{ a }}</h1>
-	{% endfor %}
-	
+    <h1>Announcement</h1>
+    <ol>
+        {% for a in announcements %}
+            <li>
+
+            <p> title {{ a.title }} ,  price {{ a.price   }}  </p>
+
+            </li>
+        {% endfor %}
+    </ol>
+
+    <a href="{% url 'announcements:announcement-create' %}" class="btn btn-dark"> create </a>
 {% endblock %}
